@@ -1,0 +1,22 @@
+<div class="container text-center my-5">
+    <div class="p-4 p-md-5 mb-4 rounded">
+        <h1 class="display-4 fst-italic">Explore Our Blogs</h1>
+    </div>
+
+    <div class="row">
+        {{#each blogs}}
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm" style="background-color: rgb(32, 32, 32); color:white">
+                <div class="card-body">
+                    <a href="/blogpost/{{this.slug}}" style="text-decoration: none; color: inherit;">
+                        <h3 class="card-title">{{this.title}}</h3>
+                    </a>
+                    <div class="mb-1 text-muted">Published on Nov 12</div>
+                    <p class="card-text">{{truncateContent this.content 100}}</p> <!-- Truncate content to 100 characters -->
+                    <a href="/blogpost/{{this.slug}}" class="btn btn-outline-light">Read More</a>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>

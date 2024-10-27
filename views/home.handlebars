@@ -1,0 +1,24 @@
+<div class="hero-section text-center text-white py-5">
+    <div class="container">
+        <h1 class="display-4 fw-bold">Welcome to Xlog</h1>
+        <p class="lead mb-4">Your go-to source for tech insights, coding tutorials, and much more.</p>
+        <a href="/blog" class="btn btn-light btn-lg">Explore the Blog</a>
+    </div>
+</div>
+
+<div class="container my-5">
+    <h2 class="text-center mb-4">Latest Articles</h2>
+    <div class="row">
+        {{#each blogs}}
+        <div class="col-md-6 mb-4"> <!-- Changed to 6 to accommodate two columns -->
+            <div class="card h-100" style="background-color: rgb(32, 32, 32); color:white">
+                <div class="card-body">
+                    <h3 class="card-title">{{this.title}}</h3>
+                    <p class="card-text">{{truncateContent this.content 100}}</p>
+                    <a href="/blogpost/{{this.slug}}" class="btn btn-outline-light">Read More</a>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>
